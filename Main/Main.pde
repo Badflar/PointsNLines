@@ -3,17 +3,16 @@ import controlP5.*;
 
 ControlP5 cp5;
 
-int factor, points, strokeWeightVal, radius; 
+// Make into class so that can be reset on command. 
+int factor, points, strokeWeightVal, radius, rotationInt; 
 
 boolean generating = false;
 
 void setup() {
-  size (640, 640);
+  size (1920, 1080);
   generating = false;
   
   ControlP5Controls(cp5);
-    
-  radius = width/2 - 16; // convert to control
 }
 
 void draw() {
@@ -21,7 +20,7 @@ void draw() {
   println(generating);
   if (generating == true) {
     background(0, 0, 0, 0);
-    beginRecord(PDF, "image-####.pdf"); 
+    beginRecord(PDF, "image-####.pdf");
     println("Generating Image");
   }
   
