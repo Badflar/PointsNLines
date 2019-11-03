@@ -51,7 +51,7 @@ public void ControlP5Controls(ControlP5 cp5) {
    ;
    
    cp5.addButton("reset")
-     .setPosition(1400,100)
+     .setPosition(1800,50)
       .setSize(38,38)
       .setColorBackground(red);
    
