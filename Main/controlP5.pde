@@ -54,6 +54,11 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setPosition(1800,50)
       .setSize(38,38)
       .setColorBackground(red);
+      
+   cp5.addButton("SavePrest")
+     .setPosition(1600,950)
+     .setSize(200,38)
+     .setColorBackground(green);
    
    cp5.addButton("finish")
      .setPosition(1400,1000)

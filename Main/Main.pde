@@ -2,6 +2,7 @@ import processing.pdf.*;
 import controlP5.*;
 
 ControlP5 cp5;
+JSONObject json;
 
 Default def = new Default();
 int points = this.def.points;
