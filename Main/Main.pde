@@ -3,22 +3,34 @@ import controlP5.*;
 
 ControlP5 cp5;
 
-// Make into class so that can be reset on command. 
-int factor, points, strokeWeightVal, radius, rotationInt; 
+Default def = new Default();
+int points = this.def.points;
+int radius = this.def.radius;
+int factor = this.def.factor;
+float strokeWeightVal = this.def.strokeWeightVal;
+int rotationInt = this.def.rotationInt;
 
 boolean generating = false;
+boolean reset = false;
 
 void setup() {
   size (1920, 1080);
-  generating = false;
-  
-  ControlP5Controls(cp5);
+  ControlP5Controls(cp5, points, factor, strokeWeightVal, radius, rotationInt);
 }
 
 void draw() {
   background(0);
-  println(generating);
-  if (generating == true) {
+  if (reset) {
+    def = new Default();
+    points = this.def.points;
+    radius = this.def.radius;
+    factor = this.def.factor;
+    strokeWeightVal = this.def.strokeWeightVal;
+    rotationInt = this.def.rotationInt;
+    reset = false;
+  }
+  
+  if (generating) {
     background(0, 0, 0, 0);
     beginRecord(PDF, "image-####.pdf");
     println("Generating Image");
@@ -30,7 +42,7 @@ void draw() {
   generateCircle(radius);
   //Debug
   //generatePoints(points, radius);
-  generateLines(points, radius, factor, strokeWeightVal);
+  generateLines(points, radius, factor, strokeWeightVal, rotationInt);
   popMatrix();
   
   if (generating) {

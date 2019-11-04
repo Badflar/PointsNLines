@@ -1,4 +1,4 @@
-public void ControlP5Controls(ControlP5 cp5) {
+public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strokeWeightVal, int radius, int rotationInt) {
   color red = color(144,0,0);
   color green = color(0,144,0);
   
@@ -11,7 +11,7 @@ public void ControlP5Controls(ControlP5 cp5) {
      .setRange(0,300)
      .setMultiplier(0.1) // set the sensitifity of the numberbox
      .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
-     .setValue(100)
+     .setValue(points)
      ;
      
    cp5.addNumberbox("factor")
@@ -20,7 +20,7 @@ public void ControlP5Controls(ControlP5 cp5) {
      .setRange(0,100)
      .setMultiplier(0.1) // set the sensitifity of the numberbox
      .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
-     .setValue(2)
+     .setValue(factor)
    ;
    
    cp5.addNumberbox("strokeWeightVal")
@@ -29,7 +29,7 @@ public void ControlP5Controls(ControlP5 cp5) {
      .setRange(0,100)
      .setMultiplier(0.1) // set the sensitifity of the numberbox
      .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
-     .setValue(.25)
+     .setValue(strokeWeightVal)
    ;
    
    cp5.addNumberbox("radius")
@@ -38,7 +38,7 @@ public void ControlP5Controls(ControlP5 cp5) {
      .setRange(0,550)
      .setMultiplier(0.1) // set the sensitifity of the numberbox
      .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
-     .setValue(300)
+     .setValue(radius)
    ;
    
    cp5.addNumberbox("rotationInt")
@@ -47,7 +47,7 @@ public void ControlP5Controls(ControlP5 cp5) {
      .setRange(0,360)
      .setMultiplier(0.1) // set the sensitifity of the numberbox
      .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
-     .setValue(180)
+     .setValue(rotationInt)
    ;
    
    cp5.addButton("reset")
@@ -63,7 +63,7 @@ public void ControlP5Controls(ControlP5 cp5) {
 }
 
 public void reset() {
-  // Make the variables a class that way they can be reset with a new class named "default"...
+  reset = true;
 }
 
 public void finish() {
