@@ -1,7 +1,6 @@
 color red = color(144,0,0);
 color green = color(0,144,0);
 color grey = color(144,144,144);
-
 String SavePresetName;
 
 public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strokeWeightVal, int radius, int rotationInt) {
@@ -88,7 +87,7 @@ public void savePreset() {
 
   //String presetName = "test";
   
-  SavePresetName = cp5.get(Textfield.class,"presetName").getText();
+   SavePresetName = cp5.get(Textfield.class,"presetName").getText();
   
   saveJSONObject(json, "presets/" + SavePresetName);
 }
