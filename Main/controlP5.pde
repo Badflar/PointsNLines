@@ -1,8 +1,10 @@
+color red = color(144,0,0);
+color green = color(0,144,0);
+color grey = color(144,144,144);
+
+String SavePresetName;
+
 public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strokeWeightVal, int radius, int rotationInt) {
-  color red = color(144,0,0);
-  color green = color(0,144,0);
-  
-  
   cp5 = new ControlP5(this);
     
   cp5.addNumberbox("points")
@@ -55,10 +57,18 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
       .setSize(38,38)
       .setColorBackground(red);
       
-   cp5.addButton("SavePrest")
-     .setPosition(1600,950)
-     .setSize(200,38)
-     .setColorBackground(green);
+   cp5.addTextfield("presetName")
+    .setPosition(50, 1000)
+    .setSize(200, 38)
+    .setColor(grey)
+    .setAutoClear(false)
+  ;
+      
+   cp5.addBang("savePreset")
+     .setPosition(275,1000)
+     .setSize(50,38)
+     .setColorBackground(grey)
+     ;
    
    cp5.addButton("finish")
      .setPosition(1400,1000)
@@ -66,6 +76,23 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setColorBackground(green)
    ;
 }
+
+public void savePreset() {
+  json = new JSONObject();
+  
+  json.setInt("points", points);
+  json.setInt("factor", factor);
+  json.setFloat("strokeWeightVal", strokeWeightVal);
+  json.setInt("radius", radius);
+  json.setInt("rotationInt", rotationInt);
+
+  //String presetName = "test";
+  
+  SavePresetName = cp5.get(Textfield.class,"presetName").getText();
+  
+  saveJSONObject(json, "presets/" + SavePresetName);
+}
+
 
 public void reset() {
   reset = true;
