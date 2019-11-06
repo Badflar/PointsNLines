@@ -1,7 +1,7 @@
 {
   "rotationInt": 180,
   "strokeWeightVal": 0.25,
-  "factor": 2,
+  "factor": 30,
   "radius": 300,
-  "points": 100
+  "points": 116
 }

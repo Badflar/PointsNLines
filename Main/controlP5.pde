@@ -1,7 +1,8 @@
 color red = color(144,0,0);
 color green = color(0,144,0);
 color grey = color(144,144,144);
-String SavePresetName;
+
+Textfield SavePresetName;
 
 public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strokeWeightVal, int radius, int rotationInt) {
   cp5 = new ControlP5(this);
@@ -56,7 +57,7 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
       .setSize(38,38)
       .setColorBackground(red);
       
-   cp5.addTextfield("presetName")
+   SavePresetName = cp5.addTextfield("presetName")
     .setPosition(50, 1000)
     .setSize(200, 38)
     .setColor(grey)
@@ -66,7 +67,14 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
    cp5.addBang("savePreset")
      .setPosition(275,1000)
      .setSize(50,38)
+     .setColorBackground(green)
+     ;
+     
+   cp5.addBang("loadPreset")
+     .setPosition(350,1000)
+     .setSize(50,38)
      .setColorBackground(grey)
+     .setColorForeground(grey)
      ;
    
    cp5.addButton("finish")
@@ -86,10 +94,37 @@ public void savePreset() {
   json.setInt("rotationInt", rotationInt);
 
   //String presetName = "test";
+  String SavePresetText = SavePresetName.getText();
   
-   SavePresetName = cp5.get(Textfield.class,"presetName").getText();
-  
-  saveJSONObject(json, "presets/" + SavePresetName);
+  saveJSONObject(json, "presets/" + SavePresetText);
+}
+
+public void loadPreset() {
+  selectInput("Select a file to load presets from...", "presetFileSelected");
+}
+
+public void presetFileSelected(File selection) {
+  if (selection == null) {
+    println("No file was selected");
+  } else {
+    println("Selected File");
+    
+    String Location = selection.getAbsolutePath();
+    
+    println(Location);
+    
+    try {
+      json = loadJSONObject(Location);
+      
+      points = json.getInt("points");
+      factor = json.getInt("factor");
+      strokeWeightVal = json.getFloat("strokeWeightVal");
+      radius = json.getInt("radius");
+      rotationInt = json.getInt("rotationInt");
+    } catch(Exception e) {
+      println("Either file was not a json or something when wrong" + e);
+    }
+  }
 }
 
 
