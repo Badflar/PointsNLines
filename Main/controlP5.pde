@@ -11,8 +11,8 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setPosition(50,50)
      .setSize(200,28)
      .setRange(0,300)
-     .setMultiplier(0.1) // set the sensitifity of the numberbox
-     .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
+     .setMultiplier(0.1) 
+     .setDirection(Controller.HORIZONTAL) 
      .setValue(points)
      ;
      
@@ -20,8 +20,8 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setPosition(50,100)
      .setSize(200,28)
      .setRange(0,100)
-     .setMultiplier(0.1) // set the sensitifity of the numberbox
-     .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
+     .setMultiplier(0.1) 
+     .setDirection(Controller.HORIZONTAL) 
      .setValue(factor)
    ;
    
@@ -29,8 +29,8 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setPosition(50,150)
      .setSize(200,28)
      .setRange(0,100)
-     .setMultiplier(0.1) // set the sensitifity of the numberbox
-     .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
+     .setMultiplier(0.1) 
+     .setDirection(Controller.HORIZONTAL) 
      .setValue(strokeWeightVal)
    ;
    
@@ -38,8 +38,8 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setPosition(50,200)
      .setSize(200,28)
      .setRange(0,550)
-     .setMultiplier(0.1) // set the sensitifity of the numberbox
-     .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
+     .setMultiplier(0.1) 
+     .setDirection(Controller.HORIZONTAL) 
      .setValue(radius)
    ;
    
@@ -47,8 +47,8 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setPosition(50,250)
      .setSize(200,28)
      .setRange(0,360)
-     .setMultiplier(0.1) // set the sensitifity of the numberbox
-     .setDirection(Controller.HORIZONTAL) // change the control direction to left/right
+     .setMultiplier(0.1) 
+     .setDirection(Controller.HORIZONTAL) 
      .setValue(rotationInt)
    ;
    
