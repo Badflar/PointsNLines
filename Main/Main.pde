@@ -39,9 +39,7 @@ void draw() {
   
   pushMatrix();
   translate(width/2, height/2);
-  // SETUP
   generateCircle(radius);
-  //Debug
   //generatePoints(points, radius);
   generateLines(points, radius, factor, strokeWeightVal, rotationInt);
   popMatrix();
