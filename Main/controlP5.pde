@@ -16,6 +16,11 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setValue(points)
      ;
      
+   cp5.addBang("autoPoints")
+     .setPosition(275,50)
+     .setSize(28,28)
+     ;
+     
    cp5.addNumberbox("factor")
      .setPosition(50,100)
      .setSize(200,28)
@@ -24,6 +29,11 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setDirection(Controller.HORIZONTAL) 
      .setValue(factor)
    ;
+   
+   cp5.addBang("autoFactor")
+     .setPosition(275,100)
+     .setSize(28,28)
+     ;
    
    cp5.addNumberbox("strokeWeightVal")
      .setPosition(50,150)
@@ -52,12 +62,24 @@ public void ControlP5Controls(ControlP5 cp5, int points, int factor, float strok
      .setValue(rotationInt)
    ;
    
+   cp5.addBang("autoRotation")
+     .setPosition(275,250)
+     .setSize(28,28)
+     ;
+   
    cp5.addButton("reset")
      .setPosition(1800,50)
       .setSize(38,38)
       .setColorBackground(red);
       
    SavePresetName = cp5.addTextfield("presetName")
+    .setPosition(50, 1000)
+    .setSize(200, 38)
+    .setColor(grey)
+    .setAutoClear(false)
+  ;
+  
+  SavePresetName = cp5.addTextfield("presetName")
     .setPosition(50, 1000)
     .setSize(200, 38)
     .setColor(grey)
@@ -97,6 +119,34 @@ public void savePreset() {
   String SavePresetText = SavePresetName.getText();
   
   saveJSONObject(json, "presets/" + SavePresetText);
+}
+
+public void  autoPoints() {
+  if (autoPoints) {
+    autoPoints = false;
+  }
+  else {
+    autoPoints = true;
+  }
+}
+
+public void  autoFactor() {
+  if (autoFactor) {
+    autoFactor = false;
+  }
+  else {
+    autoFactor = true;
+  }
+}
+
+public void autoRotation() {
+  if (autoRotation) {
+    autoRotation = false;
+  }
+  else {
+    autoRotation = true;
+  }
+
 }
 
 public void loadPreset() {
