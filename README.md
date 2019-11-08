@@ -1,5 +1,8 @@
-# PointsNLines
-Processing app that makes neat looking circles
+<img src="https://i.imgur.com/SMiUI1x.png" title="Badflar" alt="Badflar">
 
-## Downloads
-```PointsNLines Prerelease MAC``` and ```PointsNLines Prerelease Win64``` are available to download in the git repos.
+# PointsNLines
+
+> Processing appilcation that made interesting circles and lines with points.
+
+# Downloads
+Prerelease for Mac and Win64 are avaliable when cloning repo. 
