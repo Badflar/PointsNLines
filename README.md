@@ -6,3 +6,4 @@
 
 # Downloads
 Prerelease for Mac and Win64 are avaliable when cloning repo. 
+https://gumroad.com/l/sacJ Get full here for updates. 
