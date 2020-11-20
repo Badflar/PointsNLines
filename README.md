@@ -1,5 +1,3 @@
-<img src="https://i.imgur.com/SMiUI1x.png" title="Badflar" alt="Badflar">
-
 # PointsNLines
 
 > Processing appilcation that made interesting circles and lines with points.
